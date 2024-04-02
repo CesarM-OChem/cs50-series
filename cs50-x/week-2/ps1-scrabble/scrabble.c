@@ -26,7 +26,7 @@ int main(void){
 int score(string s){
     int points = 0;
 
-    for(int i = 0, lenght = strlen(s); i < lenght; i++){
+    for(int i = 0, length = strlen(s); i < length; i++){
         if(isalpha(s[i]) != 0){
             points += pointTable[toupper(s[i]) - 'A'];
         }
