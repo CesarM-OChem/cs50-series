@@ -7,7 +7,7 @@ below.
 
 <img src="https://cs50.harvard.edu/x/2024/psets/1/mario/less/pyramid.png">
 
-In a file called mario.c in a folder called mario-less, implement a program in C that recreates that pyramid, using
+In a file called ```mario.c``` in a folder called ```mario-less```, implement a program in C that recreates that pyramid, using
 hashes (#) for bricks, as in the below:
 
 ```
