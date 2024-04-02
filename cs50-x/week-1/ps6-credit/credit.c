@@ -75,5 +75,28 @@ int main(void){
         break;
     }
 
-    printf("%s\n", flag);
+    int sum = 0;
+    copy = number;
+
+    for(int i = digits - 1; i >= 0; i--){
+        if((digits - i) % 2 == 0){
+            int multiplication = 2 * (copy % 10);
+            if(multiplication > 9){
+                sum += multiplication % 10;
+                sum += multiplication / 10;
+            }else{
+                sum += 2 * (copy % 10);
+            }
+            copy /= 10;
+        }else{
+            sum += copy % 10;
+            copy /= 10;
+        }
+    }
+    printf("%i\n", sum);
+    if(sum % 10 == 0){
+        printf("%s\n", flag);
+    }else{
+        printf("INVALID\n");
+    }
 }
