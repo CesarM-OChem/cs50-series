@@ -1,0 +1,22 @@
+Sort1:
+
+Ordenation  Size    Real Time (ms)
+sorted      50000   0,860
+random      50000   17,409
+reversed    50000   14,222
+
+
+Sort2:
+
+Ordenation  Size    Real Time (ms)
+sorted      50000   0,887
+random      50000   1,100
+reversed    50000   1,167
+
+
+Sort3:
+
+Ordenation  Size    Real Time (ms)
+sorted      50000   7,786
+random      50000   8,842
+reversed    50000   8,856

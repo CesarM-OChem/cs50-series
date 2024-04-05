@@ -1,0 +1,18 @@
+sort1 uses: Bubble Sort
+
+How do you know?: Bubble sort can be really slow with unsorted data (O(n²)), 
+but it is much faster with sorted data (O(n)). In this case, this algorithm 
+took much less time in the sorted list (860 ms) than with the reversed 
+one (14,222 ms).
+
+sort2 uses: Merge Sort
+
+How do you know?: Merge sort always takes n.log(n) to sort any set of data, 
+which it is the fastest of three algorithms (~1,000 ms).
+
+sort3 uses: Selection Sort
+
+How do you know?: Independently of the organization of the list, this 
+algorithm always takes a long and consistent time (O(n²)). The difference 
+between the sorted and reversed lists was too small to diferenciate, what 
+indicates that the algorithm has O(n²) and Ω(n²).
