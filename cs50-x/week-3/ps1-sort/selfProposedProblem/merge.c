@@ -21,6 +21,7 @@ int main(int argc, string argv[]){
         return 2;
     }
 
+    // Determines the number of lines of the file, hense the quantity of numbers
     int rowCounter = 0;
 
     while(fgets(row, MAX_LINE_LENGTH, inputFile) != NULL){
@@ -31,6 +32,7 @@ int main(int argc, string argv[]){
 
     int list[rowCounter];
 
+    // Fill the array with the numbers of the file
     for(int i = 0; i < rowCounter; i++){
         if(fgets(row, MAX_LINE_LENGTH, inputFile) != NULL){
             list[i] = atoi(row);
@@ -50,10 +52,12 @@ int main(int argc, string argv[]){
 }
 
 void sort(int list[], int size){
+    // Base case
     if (size == 1){
         return;
     }
 
+    // Determines the size of the two halves of the original array that will be created
     int leftSize, rightSize;
     if(size % 2 == 0){
         leftSize = rightSize = size / 2;
@@ -70,6 +74,8 @@ void sort(int list[], int size){
     sort(leftHalf, leftSize);
     sort(rightHalf, rightSize);
 
+    // Indexes of the two halves and a flag to indicate that one of the halves was completely traversed
+    // which happens when the index is igual to the half length
     int leftPos = 0, rightPos = 0;
     bool leftLast = false, rightLast = false;
 
@@ -77,6 +83,8 @@ void sort(int list[], int size){
         if(leftPos == leftSize){leftLast = true;}
         if(rightPos == rightSize){rightLast = true;}
         
+        // Checks left flag, than right flag and, if not in the end of any halves, compare the current
+        // two numbers to find the smaller
         if(leftLast){
             list[i] = rightHalf[rightPos];
             rightPos++;
