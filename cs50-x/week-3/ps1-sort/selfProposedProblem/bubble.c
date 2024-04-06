@@ -4,7 +4,7 @@
 
 #define MAX_LINE_LENGTH 1000
 
-void sort(int list[]);
+void sort(int list[], int size);
 
 int main(int argc, string argv[]){
     if(argc != 2){
@@ -36,11 +36,13 @@ int main(int argc, string argv[]){
         }
     }
 
+    sort(list, rowCounter);
+
     fclose(file);
     return 0;
 }
 
-void sort(int list[]){
+void sort(int list[], int size){
 
     return;
 }

@@ -4,7 +4,7 @@
 
 #define MAX_LINE_LENGTH 1000
 
-void sort(int list[]);
+void sort(int list[], int size);
 
 int main(int argc, string argv[]){
     if(argc != 2){
@@ -13,34 +13,55 @@ int main(int argc, string argv[]){
     }
 
     char row[MAX_LINE_LENGTH];
-    FILE *file = fopen(argv[1], "r");
+    FILE *inputFile = fopen(argv[1], "r");
 
-    if(file == NULL){
+    if(inputFile == NULL){
         printf("Cound't open the file.. Check if it exists!\n");
         return 2;
     }
 
     int rowCounter = 0;
 
-    while(fgets(row, MAX_LINE_LENGTH, file) != NULL){
+    while(fgets(row, MAX_LINE_LENGTH, inputFile) != NULL){
         rowCounter++;
     }
 
-    rewind(file);
+    rewind(inputFile);
 
     int list[rowCounter];
 
     for(int i = 0; i < rowCounter; i++){
-        if(fgets(row, MAX_LINE_LENGTH, file) != NULL){
+        if(fgets(row, MAX_LINE_LENGTH, inputFile) != NULL){
             list[i] = atoi(row);
         }
     }
 
-    fclose(file);
+    sort(list, rowCounter);
+    FILE *outputFile = fopen("answer.txt", "w");
+
+    for(int i = 0; i < rowCounter; i++){
+        fprintf(outputFile, "%d\n", list[i]);
+    }
+
+    fclose(inputFile);
+    fclose(outputFile);
     return 0;
 }
 
-void sort(int list[]){
+void sort(int list[], int size){
+    for(int i = 0; i < size; i++){
+        int minor = list[i];
+        int position = i;
+        for(int j = i; j < size; j++){
+            if(list[j] < minor){
+                minor = list[j];
+                position = j;
+            }
+        }
 
+        int temp = list[i];
+        list[i] = minor;
+        list[position] = temp;
+    }
     return;
 }
