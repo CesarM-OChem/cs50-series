@@ -2,7 +2,7 @@
 
 ## To begin
 
-Here was proposed that I complement an already existing code to finish the vote counting of a plurality election without modify
+Here was proposed that I complement an already existing code to finish the vote counting of a Runoff election without modify
 any part of the existing code. Here I was able to see a little more about what it if to extend a team's previous work.
 
 ## Text extracted from CS50:
