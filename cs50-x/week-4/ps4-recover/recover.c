@@ -23,7 +23,7 @@ int main(int argc, char *argv[]){
     
     BYTE block[BLOCK_SIZE];
     int firstFileCreated = 0; // Usefull to only try to close a file if the first one is already opened
-    char name[sizeof("images/000.jpeg") + 1] = "images/000.jpeg"; //directory needs to exist before running application
+    char name[sizeof("images/000.jpg") + 1] = "images/000.jpg"; //directory needs to exist before running application
     int file_number = 0;
     FILE *file = NULL;
 
@@ -41,7 +41,7 @@ int main(int argc, char *argv[]){
             }
             
             file_number++;
-            snprintf(name, sizeof(name), "images/%03d.jpeg", file_number);
+            snprintf(name, sizeof(name), "images/%03d.jpg", file_number);
             firstFileCreated = 1;
         }
 
